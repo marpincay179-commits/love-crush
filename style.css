@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 12px;
+  text-align: center;
+  background: linear-gradient(#ffe6f0, #ffd6e8);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1 {
+  color: #d63384;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+
+.subtitle {
+  color: #a10050;
+  font-size: 0.95rem;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  max-width: 360px;
+  margin: 20px auto;
+}
+
+.cell {
+  aspect-ratio: 1 / 1;
+  background: white;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.cell:hover {
+  transform: scale(1.1);
+  background: #ffe6f0;
+}
+
+.cell.match {
+  transform: scale(1.25);
+  background: #ffb3d9;
+}
+
+#messageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+#message {
+  font-size: 1.05rem;
+  color: #b3005e;
+  min-height: 24px;
+  transition: transform 0.3s;
+}
+
+#messageImage {
+  width: min(300px, 70%);
+  max-width: 300px;
+  border-radius: 15px;
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+.hidden {
+  display: none;
+}
+
+#finalMessage {
+  margin: 25px auto;
+  max-width: 320px;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
